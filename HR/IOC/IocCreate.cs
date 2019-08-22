@@ -13,24 +13,41 @@ namespace IOC
 {
     public class IocCreate
     {
-        public static IStudentDAO CreateStudenDAO()
+        public static ISstandard_detailsDAO Createstandard_detailsDAO()
         {
             UnityContainer ioc = new UnityContainer();
-            ioc.RegisterType<IStudentDAO, StudentDAO>();
-            return ioc.Resolve<IStudentDAO>();
+            ioc.RegisterType<ISstandard_detailsDAO, standard_detailsDAO>();
+            return ioc.Resolve<ISstandard_detailsDAO>();
         }
 
-        public static IStudentBLL CreateStudentBLL()
+        public static ISstandard_detailsBLL Createstandard_detailsBLL()
         {
             UnityContainer ioc = GetBLLSeciton();
-            return ioc.Resolve<IStudentBLL>("StudentBLL");
+            return ioc.Resolve<ISstandard_detailsBLL>("standard_detailsBLL");
         }
+
+
+
+
+        public static ISpublic_charDAO Createpublic_charDAO()
+        {
+            UnityContainer ioc = new UnityContainer();
+            ioc.RegisterType<ISpublic_charDAO, public_charDAO>();
+            return ioc.Resolve<ISpublic_charDAO>();
+        }
+
+        public static ISpublic_charBLL Createpublic_charBLL()
+        {
+            UnityContainer ioc = GetBLLSeciton();
+            return ioc.Resolve<ISpublic_charBLL>("public_charBLL");
+        }
+
 
         private static UnityContainer GetBLLSeciton()
         {
             UnityContainer ioc = new UnityContainer();
             ExeConfigurationFileMap ecf = new ExeConfigurationFileMap();
-            ecf.ExeConfigFilename = @"D:\VS\阶段四\HR\UI\Unity.config";
+            ecf.ExeConfigFilename = @"C:\Users\lenovo\Source\Repos\HR3\HR\UI\Unity.config";
             Configuration cf = ConfigurationManager.OpenMappedExeConfiguration(ecf, ConfigurationUserLevel.None);
             UnityConfigurationSection cfs = cf.GetSection("unity") as UnityConfigurationSection;
             ioc.LoadConfiguration(cfs, "containerTwo");
