@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\StudentBLL.cs" />
+    <Compile Include="public_charBLL.cs" />
+    <Compile Include="standard_detailsBLL.cs" />
+    <Compile Include="StudentBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
