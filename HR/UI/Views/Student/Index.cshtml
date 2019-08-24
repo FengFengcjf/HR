@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Model.StudentModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-wi dth" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("新增", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>操作</th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("修改", "Edit", new { id=item.Id })
+                @Html.ActionLink("删除", "Delete", new { id=item.Id }, new { onclick = "return confirm('亲,这样不好吧')" })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
