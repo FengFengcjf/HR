@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/javascript/vue.js"></script>
+    <script src="~/javascript/jquery-1.10.2.js"></script>
+    <link href="~/css/table.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="div1">
+        <form method="post" action="../customiz/customizAction!findAttribute">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <font color="black">
+                            您正在做的业务是：人力资源--客户化设置--人力资源档案管理设置--职称设置
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"></td>
+                </tr>
+            </table>
+            <table width="100%" border="1" cellpadding=0 cellspacing=1 bordercolorlight=#848284 bordercolordark=#eeeeee class="TABLE_STYLE1">
+                <tr style="background-color:cornflowerblue">
+                    <th>编号</th>
+                    <th>操作</th>
+                </tr>
+                <tr v-for="(item,i) in rows">
+                    <td>{{item.attribute_name}}</td>
+                    <td><a v-bind:href="['/config_public_char/Delete/'+item.Id]" onclick="return confirm('亲,这样不好吧')">删除</a></td>
+                </tr>
+            </table>
+        </form>
+
+        <div>
+            @*@Html.ActionLink("Back to List", "Index")*@
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var vm =new Vue({
+        el: "#div1",
+        data:{
+            rows: null
+        },
+        methods: {
+            load: function () {
+                var v = this;
+                $.ajax({
+                    url: "/config_public_char/Index2",
+                    type: "post",
+                    data: "",
+                    success: function (msg) {
+                        var dd = eval("(" + msg + ")");
+                        v.rows = dd;
+                    }
+                });
+            }
+        },
+        created: function () {
+            this.load();
+        }
+    });
+</script>
