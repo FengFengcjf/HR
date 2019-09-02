@@ -34,9 +34,15 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework.6.0.0.0.Fakes">
+      <HintPath>FakesAssemblies\EntityFramework.6.0.0.0.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -51,15 +57,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExeConfig\public_charConfig.cs" />
+    <Compile Include="config_file_first_kind.cs" />
+    <Compile Include="config_file_second_kind.cs" />
+    <Compile Include="config_file_third_kind.cs" />
+    <Compile Include="config_major.cs" />
+    <Compile Include="config_major_kind.cs" />
+    <Compile Include="config_public_char.cs" />
+    <Compile Include="ExeConfig\config_file_first_kindConfig.cs" />
+    <Compile Include="ExeConfig\config_file_second_kindConfig.cs" />
+    <Compile Include="ExeConfig\config_file_third_kindConfig.cs" />
+    <Compile Include="ExeConfig\config_majorConfig.cs" />
+    <Compile Include="ExeConfig\config_major_kindConfig.cs" />
+    <Compile Include="ExeConfig\config_public_charConfig.cs" />
+    <Compile Include="ExeConfig\GuanliConfig.cs" />
     <Compile Include="ExeConfig\standard_detailsConfig.cs" />
+    <Compile Include="ExeConfig\StundentConfig.cs" />
+    <Compile Include="ExeConfig\usersConfig.cs" />
+    <Compile Include="Guanli.cs" />
     <Compile Include="MyDbcontext.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="public_char.cs" />
     <Compile Include="standard_details.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="users.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <Fakes Include="Fakes\EntityFramework.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

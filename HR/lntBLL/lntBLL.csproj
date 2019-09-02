@@ -40,8 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISpublic_charBLL.cs" />
+    <Compile Include="Iconfig_file_first_kindBLL.cs" />
+    <Compile Include="Iconfig_file_second_kindBLL.cs" />
+    <Compile Include="Iconfig_file_third_kindBLL.cs" />
+    <Compile Include="Iconfig_majorBLL.cs" />
+    <Compile Include="Iconfig_major_kindBLL.cs" />
+    <Compile Include="Iconfig_public_charBLL.cs" />
+    <Compile Include="IGuanliBLL.cs" />
     <Compile Include="ISstandard_detailsBLL.cs" />
+    <Compile Include="IStudentBLL.cs" />
+    <Compile Include="IusersBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

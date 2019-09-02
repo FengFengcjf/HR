@@ -40,8 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISpublic_charDAO.cs" />
+    <Compile Include="Iconfig_file_first_kindDAO.cs" />
+    <Compile Include="Iconfig_file_second_kindDAO.cs" />
+    <Compile Include="Iconfig_file_third_kindDAO.cs" />
+    <Compile Include="Iconfig_majorDAO.cs" />
+    <Compile Include="Iconfig_major_kindDAO.cs" />
+    <Compile Include="Iconfig_public_charDAO.cs" />
+    <Compile Include="IGuanliDAO.cs" />
     <Compile Include="ISstandard_detailsDAO.cs" />
+    <Compile Include="IStudentDAO.cs" />
+    <Compile Include="IusersDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

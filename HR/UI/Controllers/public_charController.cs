@@ -12,23 +12,25 @@ namespace UI.Content.Controllers
 {
     public class public_charController : Controller
     {
-        ISpublic_charBLL pc = IocCreate.Createpublic_charBLL();
+        Iconfig_public_charBLL ind = IocCreate.Createconfig_public_charBLL();
         // GET: public_char
         public ActionResult Index()
         {
             //List<public_charModel> list= pc.Select();
             //return View(list);
+            Fill();
             return View();
+        
         }
 
         public ActionResult Fill()
         {
-            List<public_charModel> list = pc.Select();
+            List<config_public_charModel> list = ind.Select();
             return Content(JsonConvert.SerializeObject(list));
         }
         public ActionResult Select()
         {
-            List<public_charModel> dt = pc.Select();
+            List<config_public_charModel> dt = ind.Select();
             return Content(JsonConvert.SerializeObject(dt));
         }
 
@@ -46,9 +48,9 @@ namespace UI.Content.Controllers
 
         // 新增
         [HttpPost]
-        public ActionResult Create(public_charModel pcm)
+        public ActionResult Create(config_public_charModel pcm)
         {
-            if (pc.Add(pcm) > 0)
+            if (ind.Add(pcm) > 0)
             {
                 return Content("<script>alert('新增成功');window.location='Index'</script>");
             }
@@ -61,47 +63,47 @@ namespace UI.Content.Controllers
 
         // GET: public_char/Edit/5
         [HttpGet]
-        public ActionResult Edit(int id)
-        {
+        //public ActionResult Edit(int id)
+        //{
 
-          public_charModel sd = new public_charModel()
-            {
-                Id = id
-            };
-            List<public_charModel> list = pc.SelectBy(sd);
-            public_charModel st = new public_charModel()
-            {
-                Id = list[0].Id,
-                attribute_kind=list[0].attribute_kind,
-                attribute_name=list[0].attribute_name      
-            };
-            return View(st);
-        }
+        //  public_charModel sd = new public_charModel()
+        //    {
+        //        Id = id
+        //    };
+        //    List<public_charModel> list = pc.SelectBy(sd);
+        //    public_charModel st = new public_charModel()
+        //    {
+        //        Id = list[0].Id,
+        //        attribute_kind=list[0].attribute_kind,
+        //        attribute_name=list[0].attribute_name      
+        //    };
+        //    return View(st);
+        //}
 
-        // POST: public_char/Edit/5
-        [HttpPost]
-        public ActionResult Edit(public_charModel st)
-        {
+        //// POST: public_char/Edit/5
+        //[HttpPost]
+        //public ActionResult Edit(public_charModel st)
+        //{
             
-            if (pc.Update(st) > 0)
-            {
-                return JavaScript("alert('修改成功');window.location.href='/public_char/Index'");
-                //return Content("<script>alert('修改成功');window.location='Index'</script>");
-            }
-            else
-            {
-                ViewBag.dt = st;
-            }
-            return View();
-        }
+        //    if (pc.Update(st) > 0)
+        //    {
+        //        return JavaScript("alert('修改成功');window.location.href='/public_char/Index'");
+        //        //return Content("<script>alert('修改成功');window.location='Index'</script>");
+        //    }
+        //    else
+        //    {
+        //        ViewBag.dt = st;
+        //    }
+        //    return View();
+        //}
        
        
         public ActionResult Delete(int id)
         {
-            public_charModel pcs = new public_charModel() {
-                Id=id
+            config_public_charModel pcs = new config_public_charModel() {
+                Id=short.Parse(id.ToString())
             };
-            if (pc.Del(pcs)>0)
+            if (ind.Del(pcs)>0)
             {
                 return RedirectToAction("Index");
             }

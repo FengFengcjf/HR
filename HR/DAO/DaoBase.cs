@@ -8,12 +8,12 @@ using System.Linq.Expressions;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
-
+using Commnd;
 namespace DAO
 {
     public class DaoBase<T> where T : class
     {
-
+     
         static MyDbcontext db = CreateDbContext();
 
         //用于监测Context中的Entity是否存在，如果存在，将其Detach，防止出现问题。
@@ -31,6 +31,7 @@ namespace DAO
             }
 
             return (exists);
+            
         }
 
 
@@ -51,6 +52,7 @@ namespace DAO
         {
             //Set<T>()等于Students
             db.Set<T>().Add(t);
+            
             return db.SaveChanges();
         }
         public int Update(T t)
@@ -65,7 +67,9 @@ namespace DAO
             RemoveHoldingEntityInContext(t);
             db.Entry(t).State = EntityState.Deleted;
             return db.SaveChanges();
-
+           // Type E = null;
+           // Exception tt = null;
+           //LogHelper.WriteLog(E,tt);
         }
 
         public List<T> SelectAll()
@@ -80,7 +84,7 @@ namespace DAO
         public List<T> SelectBy(Expression<Func<T, bool>> where)
         {
 
-            List<T> list = db.Set<T>().Select(e => e)
+            List<T> list = db.Set<T>().Select(e =>e)
                     .Where(where)
                     .AsNoTracking()
                     .ToList();
@@ -88,6 +92,16 @@ namespace DAO
 
             return list;
         }
+
+        //public List<T> Login(Expression<Func<T, bool>> where)
+        //{
+
+        //    List<T> list = db.Set<T>().Select(e => e)
+        //            .Where(where)
+        //            .AsNoTracking()
+        //            .ToList();
+        //    return list;
+        //}
 
         public List<T> FenYe<K>(Expression<Func<T, K>> order, Expression<Func<T, bool>> where, ref int rows, int currentPage, int pageSize)
         {
