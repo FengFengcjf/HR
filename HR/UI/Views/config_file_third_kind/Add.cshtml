@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Add</title>
     <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script src="~/Scripts/vue.js"></script>
+    <script src="~/javascript/vue.js"></script>
     <link rel="stylesheet"
           href="../../css/table.css" type="text/css">
     <script type="text/javascript"
@@ -21,12 +21,12 @@
         $(function () {
             var sid = $("#bb").val();
             $.ajax({
-                url: "/config_file_third_kindController/SeBy",
+                url: "/config_file_third_kind/SeByy",
                 type: "post",
                 data: "sid=" + sid,
                 success: function (msg) {
                     $("#cc option").remove();
-                    var data = evel("(" + msg + ")");
+                    var data = eval("(" + msg + ")");
                     for (var i = 0; i < data.length; i++) {
                         var $items = $("<option value='" + data[i]["second_kind_id"]+ "'>" + data[i]["second_kind_name"] + "</option>");
                         $("#cc").append($items);
@@ -34,20 +34,20 @@
                 }
             });
             $("#bb").change(function () {
-                var sid = $("#sid").val();
+                var sid = $("#bb").val();
                 $.ajax({
-                    url: "/config_file_third_kindController/SeBy",
+                    url: "/config_file_third_kind/SeByy",
                     type: "post",
                     data: "sid=" + sid,
                     success: function (msg) {
                         $("#cc option").remove();
-                        var data = evel("(" + msg + ")");
+                        var data = eval("(" + msg + ")");
                         for (var i = 0; i < data.length; i++) {
-                            var $items = $("<option value='" + data[i]["second_kind_id"]+ "'>" + data[i]["second_kind_name"] + "</option>");
+                            var $items = $("<option value='" + data[i]["second_kind_id"] + "'>" + data[i]["second_kind_name"] + "</option>");
                             $("#cc").append($items);
                         };
                     }
-                })
+                });
             })
         })
         
@@ -95,7 +95,7 @@
                             II级机构名称
                         </td>
                         <td width="81%" class="TD_STYLE2">
-                            @Html.DropDownList("second_kind_id", ViewData["ej"] as IEnumerable<SelectListItem>, new { @Id = "cc" })
+                            @Html.DropDownList("second_kind_id", ViewData["ej"] as IEnumerable<SelectListItem>, new { @Id = "cc",@name= "second_kind_id" })
                             @Html.ValidationMessageFor(model => model.second_kind_name, "", new { @class = "text-danger" })
                         </td>
                     </tr>

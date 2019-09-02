@@ -43,5 +43,15 @@ namespace BLL
         {
             return ist.Se();
         }
+
+        public List<config_file_third_kindModel> SeBy(String Id)
+        {
+            return ist.SeBy(Id);
+        }
+
+        public List<config_file_third_kindModel> SelectByName(config_file_third_kindModel st)
+        {
+            return ist.SelectByName(st);
+        }
     }
 }

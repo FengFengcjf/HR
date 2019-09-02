@@ -49,11 +49,11 @@ namespace DAO
         private static void WriteLog(Exception ex)
         {
             //LogHelper.WriteLog(typeof(DBHelper), ex.Message);
-            using (StreamWriter sw = new StreamWriter("错误日志.txt", true))
-            {
-                sw.WriteLine("错误的时间:" + DateTime.Now);
-                sw.WriteLine("错误的信息:" + ex.Message);
-            }
+            //using (StreamWriter sw = new StreamWriter("错误日志.txt", true))
+            //{
+            //    sw.WriteLine("错误的时间:" + DateTime.Now);
+            //    sw.WriteLine("错误的信息:" + ex.Message);
+            //}
         }
 
         public static object SelectSinger(string sql, params SqlParameter[] ps)
