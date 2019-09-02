@@ -45,11 +45,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>E:\T3 (1)\4.5\release\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -122,6 +119,12 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -172,7 +175,15 @@
     <Compile Include="Controllers\config_file_first_kindController.cs" />
     <Compile Include="Controllers\config_file_second_kindController.cs" />
     <Compile Include="Controllers\config_file_third_kindController.cs" />
+    <Compile Include="Controllers\config_majorController.cs" />
+    <Compile Include="Controllers\config_major_kindController.cs" />
+    <Compile Include="Controllers\config_public_charController.cs" />
+    <Compile Include="Controllers\engage_major_releaseController.cs" />
+    <Compile Include="Controllers\engage_resumeController.cs" />
+    <Compile Include="Controllers\public_charController.cs" />
+    <Compile Include="Controllers\standard_detailsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,7 +197,23 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\cwcalendar.css" />
+    <Content Include="css\easyui.css" />
+    <Content Include="css\icon.css" />
     <Content Include="css\table.css" />
+    <Content Include="DatePicker\calendar.js" />
+    <Content Include="DatePicker\config.js" />
+    <Content Include="DatePicker\lang\en.js" />
+    <Content Include="DatePicker\lang\zh-cn.js" />
+    <Content Include="DatePicker\lang\zh-tw.js" />
+    <Content Include="DatePicker\My97DatePicker.htm" />
+    <Content Include="DatePicker\skin\datePicker.gif" />
+    <Content Include="DatePicker\skin\default\datepicker.css" />
+    <Content Include="DatePicker\skin\default\img.gif" />
+    <Content Include="DatePicker\skin\WdatePicker.css" />
+    <Content Include="DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="DatePicker\WdatePicker.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -357,10 +384,13 @@
     <Content Include="images\tab_inactive1.jpg" />
     <Content Include="images\top-unit.gif" />
     <Content Include="images\top-unit_副本.jpg" />
+    <Content Include="images\tree_arrows.gif" />
     <Content Include="images\tree_arrow_close.gif" />
     <Content Include="images\tree_arrow_open.gif" />
     <Content Include="images\tree_arrow_over.gif" />
     <Content Include="images\tree_close.gif" />
+    <Content Include="images\tree_file.gif" />
+    <Content Include="images\tree_folder.gif" />
     <Content Include="images\tree_icon_cd.gif" />
     <Content Include="images\tree_icon_cdrom.gif" />
     <Content Include="images\tree_icon_computer.gif" />
@@ -571,6 +601,7 @@
     <Content Include="javascript\input_control\Check.js" />
     <Content Include="javascript\input_control\validation-config.xml" />
     <Content Include="javascript\input_control\validation-framework.js" />
+    <Content Include="javascript\jquery-1.10.2.js" />
     <Content Include="javascript\jquery-1.7.2.js" />
     <Content Include="javascript\jquery.easyui.min.js" />
     <Content Include="javascript\jquery.messager.js" />
@@ -610,10 +641,15 @@
     <Content Include="javascript\tree\event.js" />
     <Content Include="javascript\tree\tree.css" />
     <Content Include="javascript\user_add.js" />
+    <Content Include="javascript\vue.js" />
     <Content Include="javascript\winopen\winopen.js" />
     <Content Include="javascript\winopen\winopenm.js" />
     <Content Include="javascript\winopen\winopenn.js" />
     <Content Include="javascript\winopen\winopens.js" />
+    <Content Include="Mainpage\index.html" />
+    <Content Include="Mainpage\left.html" />
+    <Content Include="Mainpage\main.html" />
+    <Content Include="Mainpage\top.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="images\images\mod_image\Thumbs.db" />
@@ -632,7 +668,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -660,20 +695,39 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Unity.config">
-      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
-    <Content Include="Views\config_file_first_kind\Index.cshtml" />
+    <Content Include="Views\users\Index.cshtml" />
+    <Content Include="Views\config_major\Index.cshtml" />
+    <Content Include="Views\config_major_kind\Index.cshtml" />
+    <Content Include="Views\config_major_kind\Add.cshtml" />
+    <Content Include="Views\config_public_char\Index.cshtml" />
+    <Content Include="Views\public_char\Create.cshtml" />
+    <Content Include="Views\public_char\Edit.cshtml" />
+    <Content Include="Views\public_char\Index.cshtml" />
+    <Content Include="Views\standard_details\Add.cshtml" />
+    <Content Include="Views\standard_details\Index.cshtml" />
+    <Content Include="Views\config_major\Add.cshtml" />
     <Content Include="Views\config_file_first_kind\Add.cshtml" />
+    <Content Include="Views\config_file_first_kind\Index.cshtml" />
     <Content Include="Views\config_file_first_kind\Update.cshtml" />
-    <Content Include="Views\config_file_second_kind\Index.cshtml" />
     <Content Include="Views\config_file_second_kind\Add.cshtml" />
+    <Content Include="Views\config_file_second_kind\Index.cshtml" />
     <Content Include="Views\config_file_second_kind\Update.cshtml" />
+    <Content Include="Views\config_file_third_kind\Add.cshtml" />
     <Content Include="Views\config_file_third_kind\Index.cshtml" />
     <Content Include="Views\config_file_third_kind\Update.cshtml" />
-    <Content Include="Views\config_file_third_kind\Add.cshtml" />
+    <Content Include="Views\engage_major_release\Add.cshtml" />
+    <Content Include="Views\engage_major_release\Index.cshtml" />
+    <Content Include="Views\engage_major_release\Update.cshtml" />
+    <Content Include="Views\engage_major_release\Index3.cshtml" />
+    <Content Include="Views\engage_resume\Add.cshtml" />
+    <Content Include="Views\engage_resume\SelectBy.cshtml" />
+    <Content Include="Views\engage_resume\Index.cshtml" />
+    <Content Include="Views\engage_resume\Add2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -691,9 +745,9 @@
       <Project>{1bed879f-9392-4435-bddb-83a76fe6eb09}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EFentity\EFentity.csproj">
-      <Project>{11B619D7-7440-4097-A1D1-D086B786EFEC}</Project>
-      <Name>EFentity</Name>
+    <ProjectReference Include="..\Commnd\Commnd.csproj">
+      <Project>{f82bdfbf-124a-406c-b6cf-cdaa9cb6dc18}</Project>
+      <Name>Commnd</Name>
     </ProjectReference>
     <ProjectReference Include="..\IOC\IOC.csproj">
       <Project>{289b3a76-cb5e-420b-b065-be18269ab3cc}</Project>

@@ -146,7 +146,7 @@ namespace UI.Controllers
             }
         }
 
-        public ActionResult SeBy(config_file_second_kindModel s)
+        public ActionResult SeByy()
         {
             String Id = Request["sid"];
             List<config_file_second_kindModel> list = sb.SeBy(Id);

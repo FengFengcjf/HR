@@ -16,5 +16,9 @@ namespace IntDAO
         object Se();
         List<config_file_third_kindModel> Select();
        List<config_file_third_kindModel> SelectBy(config_file_third_kindModel st);
+
+        List<config_file_third_kindModel> SeBy(String Id);
+
+        List<config_file_third_kindModel> SelectByName(config_file_third_kindModel st);
     }
 }

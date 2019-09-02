@@ -127,7 +127,7 @@ namespace DAO
 
         public List<config_file_second_kindModel> SeBy(String Id)
         {
-            List<config_file_second_kind> list = SelectBy(e => e.first_kind_id.Equals(e.Id));
+            List<config_file_second_kind> list = SelectBy(e => e.first_kind_id.Equals(Id));
             List<config_file_second_kindModel> list2 = new List<config_file_second_kindModel>();
             foreach (var item in list)
             {
