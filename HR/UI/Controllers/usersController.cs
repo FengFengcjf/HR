@@ -16,16 +16,89 @@ namespace UI.Content
     {
         IusersBLL ius = IocCreate.CreateusersBLL();
         // GET: users
+      
         public ActionResult Index()
         {
-            Fill();
+            //Fill();
             return View();
+        }
+       
+        
+        public ActionResult Login(usersModel u)
+        {
+        
+            usersModel dt = ius.Login(u);
+            //if (dt.Available == "否")
+            //{
+            //    return JavaScript("alert('您没有权限登录!!');window.location.href='/users/Index'");
+            //}
+            //else
+            //{
+                if (dt != null)
+                {
+                    return JavaScript("alert('登录成功!');localStorage.setItem('a','" + dt.u_name + "'); localStorage.setItem('b','" + dt.Gid
+                        + "');localStorage.setItem('c','" + dt.Id + "') ;       window.location.href='/users/QX'");
+
+                }
+                else
+                {
+                    return JavaScript("alert('登录失败!请重新输入账号或密码!!');window.location.href='/users/Index'");
+                }
+            //}
+          
+
         }
         public ActionResult Fill()
         {
             List<usersModel> list = ius.Select();
             return Content(JsonConvert.SerializeObject(list));
         }
+
+        public ActionResult show(usersModel u)
+        {
+            string id = Request["id"];
+            int gid = u.Gid;
+            //object dt =ius.JXMain(gid, id);
+            //return Content(JsonConvert.SerializeObject(dt));
+
+            string sql = "";
+            if (id != null)
+            {
+                //查询子集                   
+                sql = string.Format(@"select* from 
+[dbo].[Pop] q inner join   [dbo].[GuanliPop] rq on
+q.id=rq.PopID where rq.GuanliID={0} and q.PID={1}", gid, id);
+            }
+            else
+            {
+                //查询父集
+                sql = string.Format(@"select id,[text],PAddress,[state] from 
+[dbo].[Pop] q inner join   [dbo].[GuanliPop] rq on
+q.id=rq.PopID where rq.GuanliID={0} and q.PID=0
+", gid);
+            }
+
+            DataTable dt = DBHelper.SelectTable(sql);
+            return Content(JsonConvert.SerializeObject(dt));
+        }
+
+        public ActionResult QX()
+        {
+            return View();
+        }
+        public ActionResult top()
+        {
+            return View();
+        }
+        public ActionResult left()
+        {
+            return View();
+        }
+        public ActionResult main()
+        {
+            return View();
+        }
+
         // GET: users/Details/5
         public ActionResult Details(int id)
         {
