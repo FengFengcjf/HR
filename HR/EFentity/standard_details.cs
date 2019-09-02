@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EFentity
 {
-  public  class standard_details
+    public   class standard_details
     {
         public int Id { get; set; }
         public string standard_id { get; set; }
