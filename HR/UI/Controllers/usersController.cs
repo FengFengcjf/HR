@@ -15,7 +15,6 @@ namespace UI.Content
     public class usersController : Controller
     {
         IusersBLL ius = IocCreate.CreateusersBLL();
-        IGuanliBLL gb = IocCreate.CreateGuanliBLL();
         // GET: users
       
         public ActionResult Index()
@@ -89,12 +88,6 @@ q.id=rq.PopID where rq.GuanliID={0} and q.PID=0
         }
         public ActionResult top()
         {
-            //    GuanliModel g = new GuanliModel()
-            //    {
-            //        Id = id
-            //    };
-            //List<GuanliModel> dt= gb.SelectBy(g);
-            //    return Content(JsonConvert.SerializeObject(dt));
             return View();
         }
         public ActionResult left()

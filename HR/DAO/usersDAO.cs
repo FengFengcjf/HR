@@ -187,10 +187,6 @@ namespace DAO
                 {
                     um.gname = "系统管理员";
                 }
-                else if (item.Gid == 9)
-                {
-                    um.gname = "CEO";
-                }
                 dt.Add(um);
             }
             //获取总行数
