@@ -7,9 +7,8 @@ using lntBLL;
 using BLL;
 using IOC;
 using Model;
+using Commnd;
 using System.Data;
-using EFentity;
-using System.Data.Entity;
 using Newtonsoft.Json;
 
 namespace UI.Controllers
@@ -21,14 +20,14 @@ namespace UI.Controllers
         public ActionResult Index()
         {
             Fill();
+            //List<StudentModel> list = isb.StudentSelect();
             return View();
         }
-        public ActionResult Fill() {
-  List<StudentModel> list = isb.StudentSelect();
+        public ActionResult Fill()
+        {
+            List<StudentModel> list = isb.StudentSelect();
             return Content(JsonConvert.SerializeObject(list));
         }
-
-
         // GET: Student/Details/5
         public ActionResult Details(int id)
         {
@@ -36,14 +35,14 @@ namespace UI.Controllers
         }
 
         // GET: Student/Create
-        public ActionResult Add()
+        public ActionResult Create()
         {
             return View();
         }
 
         // POST: Student/Create
         [HttpPost]
-        public ActionResult Add(StudentModel s)
+        public ActionResult Create(StudentModel s)
         {
 
             // TODO: Add insert logic here
@@ -58,7 +57,7 @@ namespace UI.Controllers
             return View();
         }
         // GET: Student/Edit/5
-        public ActionResult Update(int id)
+        public ActionResult Edit(int id)
         {
 
             StudentModel sd = new StudentModel()
@@ -71,25 +70,32 @@ namespace UI.Controllers
                 Id = list[0].Id,
                 Name = list[0].Name
 
-            };
+            };  
             return View(st);
         }
         // POST: Student/Edit/5
         [HttpPost]
-        public ActionResult Update(StudentModel u)
+        public ActionResult Edit(StudentModel u)
         {
-
-            // TODO: Add update logic here
-            if (isb.StudentUpdate(u) > 0)
+         
+            try
             {
-                return JavaScript("alert('修改成功');window.location.href='/Student/Index'");
+                // TODO: Add update logic here
+                if (isb.StudentUpdate(u) > 0)
+                {
+                    return JavaScript("alert('修改成功');window.location.href='/Student/Index'");
+                }
+                else
+                {
+
+                    ViewBag.dt = u;
+                }
             }
-            else
+            catch (Exception ex)
             {
 
-                ViewBag.dt = u;
+            //    LogHelper.WriteLog(ex.Message);
             }
-
             return View();
         }
 

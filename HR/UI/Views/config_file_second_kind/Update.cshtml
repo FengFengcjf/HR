@@ -52,6 +52,10 @@
                class="TABLE_STYLE1">
             <input type="hidden" name="cfsk.fskId" value=761 class="INPUT_STYLE1" />
             <tr>
+                <td style="display:none">
+                    @Html.EditorFor(model => model.first_kind_id, new { htmlAttributes = new { @class = "INPUT_STYLE1", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.first_kind_id, "", new { @class = "text-danger" })
+                </td>
                 <td width="19%" class="TD_STYLE1">
                     I级机构名称
                 </td>
