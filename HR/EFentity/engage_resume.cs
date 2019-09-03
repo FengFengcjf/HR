@@ -109,7 +109,7 @@ namespace EFentity
           get;set;
         }  
 
-        public System.DateTime human_birthday
+        public System.DateTime? human_birthday
         {
           get;set;
         }  
@@ -189,7 +189,7 @@ namespace EFentity
           get;set;
         }  
 
-        public System.DateTime regist_time
+        public System.DateTime? regist_time
         {
           get;set;
         }  
@@ -199,12 +199,12 @@ namespace EFentity
           get;set;
         }  
 
-        public System.DateTime check_time
+        public System.DateTime? check_time
         {
           get;set;
         }  
 
-        public System.Int16 interview_status
+        public System.String interview_status
         {
           get;set;
         }  
@@ -224,7 +224,7 @@ namespace EFentity
           get;set;
         }  
 
-        public System.DateTime test_check_time
+        public System.DateTime? test_check_time
         {
           get;set;
         }  
@@ -234,7 +234,7 @@ namespace EFentity
           get;set;
         }  
 
-        public System.DateTime pass_regist_time
+        public System.DateTime? pass_regist_time
         {
           get;set;
         }  
@@ -244,7 +244,7 @@ namespace EFentity
           get;set;
         }  
 
-        public System.DateTime pass_check_time
+        public System.DateTime? pass_check_time
         {
           get;set;
         }  

@@ -39,9 +39,14 @@ namespace BLL
             return ist.Update(st);
         }
 
-        public List<engage_resumeModel> SeBy(int dqy,String Qid, String Pid,String Guan, String Start, String End)
+        public List<engage_resumeModel> SeBy(int dqy,String Qid, String Pid,String Guan, String Start, String End,String Zt)
         {
-            return ist.SeBy(dqy,Qid, Pid,Guan,Start,End);
+            return ist.SeBy(dqy,Qid, Pid,Guan,Start,End, Zt);
+        }
+
+        public List<engage_resumeModel> SeByy(int dqy, String Qid, String Pid, String Guan, String Start, String End, String Zt)
+        {
+            return ist.SeByy(dqy, Qid, Pid, Guan, Start, End, Zt);
         }
 
         public List<engage_resumeModel> Fenye(int dqy)

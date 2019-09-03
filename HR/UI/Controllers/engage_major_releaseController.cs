@@ -19,6 +19,7 @@ namespace UI.Controllers
         Iconfig_major_kindBLL ia= IocCreate.Createconfig_major_kindBLL();
         Iconfig_majorBLL iii = IocCreate.Createconfig_majorBLL();
         Iengage_major_releaseBLL re = IocCreate.Createengage_major_releaseBLL();
+        IusersBLL us = IocCreate.CreateusersBLL();
 
         public ActionResult Index()
         {
@@ -80,6 +81,7 @@ namespace UI.Controllers
             ViewData["yj"] = listyj;
             ViewData["jj"] = liss;
             ViewData["ej"] = listej;
+            
             return View(ctm);
         }
 
@@ -158,6 +160,7 @@ namespace UI.Controllers
         public ActionResult Update(int id)
         {
 
+
             engage_major_releaseModel sd = new engage_major_releaseModel()
             {
                 Id = short.Parse(id.ToString())
@@ -186,6 +189,19 @@ namespace UI.Controllers
                 register = list[0].register,
                 regist_time = list[0].regist_time,
             };
+
+            List<usersModel> list2 = us.Select();
+            List<SelectListItem> listyj = new List<SelectListItem>();
+            for (int i = 0; i < list2.Count; i++)
+            {
+                SelectListItem sl = new SelectListItem()
+                {
+                    Text = list2[i].u_name.ToString(),
+                    Value = list2[i].u_name.ToString()
+                };
+                listyj.Add(sl);
+            }
+            ViewData["lj"] = listyj;
             return View(st);
         }
         // POST: Student/Edit/5

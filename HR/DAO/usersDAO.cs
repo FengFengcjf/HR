@@ -54,7 +54,10 @@ namespace DAO
             {
                 usersModel sm = new usersModel()
                 {
-                    Id = item.Id
+                    Id = item.Id,
+                    u_name=item.u_name,
+                    u_password=item.u_password,
+                    u_true_name=item.u_true_name
                 };
                 list2.Add(sm);
             }

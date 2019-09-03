@@ -154,7 +154,7 @@ namespace EFentity
           get;set;
         }  
 
-        public System.DateTime human_birthday
+        public System.DateTime? human_birthday
         {
           get;set;
         }  

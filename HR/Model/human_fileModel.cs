@@ -67,7 +67,7 @@ namespace Model
 
         public System.String human_race {get;set;}  
 
-        public System.DateTime human_birthday {get;set;}  
+        public System.DateTime? human_birthday {get;set;}  
 
         public System.String human_birthplace {get;set;}  
 

@@ -73,7 +73,8 @@ namespace DAO
         {
             config_major est = new config_major()
             {
-                Id = st.Id
+                Id = st.Id,
+
             };
             return Update(est);
         }

@@ -728,6 +728,10 @@
     <Content Include="Views\engage_resume\SelectBy.cshtml" />
     <Content Include="Views\engage_resume\Index.cshtml" />
     <Content Include="Views\engage_resume\Add2.cshtml" />
+    <Content Include="Views\engage_resume\Update.cshtml" />
+    <Content Include="Views\engage_resume\SelectByy.cshtml" />
+    <Content Include="Views\engage_resume\Index3.cshtml" />
+    <Content Include="Views\engage_resume\Update2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

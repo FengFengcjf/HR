@@ -74,7 +74,7 @@ namespace EFentity
           get;set;
         }  
 
-        public System.DateTime deadline
+        public System.DateTime? deadline
         {
           get;set;
         }  
@@ -89,12 +89,12 @@ namespace EFentity
           get;set;
         }  
 
-        public System.DateTime regist_time
+        public System.DateTime? regist_time
         {
           get;set;
         }  
 
-        public System.DateTime change_time
+        public System.DateTime? change_time
         {
           get;set;
         }  
