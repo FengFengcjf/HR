@@ -191,5 +191,31 @@ namespace IOC
             return ioc.Resolve<Ihuman_fileBLL>("human_fileBLL");
         }
 
+        public static Iengage_interviewDAO Createengage_interviewDAO()
+        {
+            UnityContainer ioc = new UnityContainer();
+            ioc.RegisterType<Iengage_interviewDAO, engage_interviewDAO>();
+            return ioc.Resolve<Iengage_interviewDAO>();
+        }
+
+        public static Iengage_interviewBLL Createengage_interviewBLL()
+        {
+            UnityContainer ioc = GetBLLSeciton();
+            return ioc.Resolve<Iengage_interviewBLL>("engage_interviewBLL");
+        }
+
+        public static Isalary_standardDAO Createsalary_standardDAO()
+        {
+            UnityContainer ioc = new UnityContainer();
+            ioc.RegisterType<Isalary_standardDAO, salary_standardDAO>();
+            return ioc.Resolve<Isalary_standardDAO>();
+        }
+
+        public static Isalary_standardBLL Createsalary_standardBLL()
+        {
+            UnityContainer ioc = GetBLLSeciton();
+            return ioc.Resolve<Isalary_standardBLL>("salary_standardBLL");
+        }
+
     }
 }

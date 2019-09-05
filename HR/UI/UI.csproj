@@ -178,9 +178,11 @@
     <Compile Include="Controllers\config_majorController.cs" />
     <Compile Include="Controllers\config_major_kindController.cs" />
     <Compile Include="Controllers\config_public_charController.cs" />
+    <Compile Include="Controllers\engage_interviewController.cs" />
     <Compile Include="Controllers\engage_major_releaseController.cs" />
     <Compile Include="Controllers\engage_resumeController.cs" />
     <Compile Include="Controllers\public_charController.cs" />
+    <Compile Include="Controllers\salary_standardController.cs" />
     <Compile Include="Controllers\standard_detailsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\usersController.cs" />
@@ -732,9 +734,15 @@
     <Content Include="Views\engage_resume\SelectByy.cshtml" />
     <Content Include="Views\engage_resume\Index3.cshtml" />
     <Content Include="Views\engage_resume\Update2.cshtml" />
+    <Content Include="Views\engage_interview\Index.cshtml" />
+    <Content Include="Views\engage_interview\Update.cshtml" />
+    <Content Include="Views\salary_standard\Index.cshtml" />
+    <Content Include="Views\engage_interview\Index4.cshtml" />
+    <Content Include="Views\engage_interview\Update2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

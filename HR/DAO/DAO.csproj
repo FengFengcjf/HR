@@ -57,9 +57,11 @@
     <Compile Include="config_public_charDAO.cs" />
     <Compile Include="DaoBase.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="engage_interviewDAO.cs" />
     <Compile Include="engage_major_releaseDAO.cs" />
     <Compile Include="engage_resumeDAO.cs" />
     <Compile Include="human_fileDAO.cs" />
+    <Compile Include="salary_standardDAO.cs" />
     <Compile Include="standard_detailsDAO.cs" />
     <Compile Include="StudentDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

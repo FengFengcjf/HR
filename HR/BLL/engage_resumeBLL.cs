@@ -54,6 +54,11 @@ namespace BLL
             return ist.Fenye(dqy);
         }
 
+        public List<engage_resumeModel> Fenye2(int dqy)
+        {
+            return ist.Fenye2(dqy);
+        }
+
         public int Row()
         {
             return ist.Row();

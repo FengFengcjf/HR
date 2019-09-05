@@ -57,6 +57,7 @@
     <Compile Include="config_major.cs" />
     <Compile Include="config_major_kind.cs" />
     <Compile Include="config_public_char.cs" />
+    <Compile Include="engage_interview.cs" />
     <Compile Include="engage_major_release.cs" />
     <Compile Include="engage_resume.cs" />
     <Compile Include="ExeConfig\config_file_first_kindConfig.cs" />
@@ -65,14 +66,17 @@
     <Compile Include="ExeConfig\config_majorConfig.cs" />
     <Compile Include="ExeConfig\config_major_kindConfig.cs" />
     <Compile Include="ExeConfig\config_public_charConfig.cs" />
+    <Compile Include="ExeConfig\engage_interviewConfig.cs" />
     <Compile Include="ExeConfig\engage_major_releaseConfig.cs" />
     <Compile Include="ExeConfig\engage_resumeConfig.cs" />
     <Compile Include="ExeConfig\human_fileConfig.cs" />
+    <Compile Include="ExeConfig\salary_standardConfig.cs" />
     <Compile Include="ExeConfig\standard_detailsConfig.cs" />
     <Compile Include="ExeConfig\StundentConfig.cs" />
     <Compile Include="ExeConfig\usersConfig.cs" />
     <Compile Include="human_file.cs" />
     <Compile Include="MyDbcontext.cs" />
+    <Compile Include="salary_standard.cs" />
     <Compile Include="standard_details.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

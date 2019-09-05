@@ -24,11 +24,8 @@ namespace UI.Controllers
             return Content(JsonConvert.SerializeObject(dt));
         }
 
-        // GET: standard_details/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+    
+
 
         // GET: standard_details/Create
         public ActionResult Add()
@@ -36,7 +33,6 @@ namespace UI.Controllers
             return View();
         }
 
-        // POST: standard_details/Create
         [HttpPost]
         public ActionResult Add(standard_detailsModel std)
         {
@@ -51,43 +47,6 @@ namespace UI.Controllers
             return View();
         }
 
-        // GET: standard_details/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: standard_details/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-         
-        public ActionResult Delete(int id)
-        {
-           standard_detailsModel s = new standard_detailsModel()
-            {
-                Id = id
-            };
-            if (sd.Del(s) > 0)
-            {
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return RedirectToAction("Index");
-            }
-        }
+       
     }
 }

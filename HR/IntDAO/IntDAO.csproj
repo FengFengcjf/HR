@@ -46,9 +46,11 @@
     <Compile Include="Iconfig_majorDAO.cs" />
     <Compile Include="Iconfig_major_kindDAO.cs" />
     <Compile Include="Iconfig_public_charDAO.cs" />
+    <Compile Include="Iengage_interviewDAO.cs" />
     <Compile Include="Iengage_major_releaseDAO.cs" />
     <Compile Include="Iengage_resumeDAO.cs" />
     <Compile Include="Ihuman_fileDAO.cs" />
+    <Compile Include="Isalary_standardDAO.cs" />
     <Compile Include="ISstandard_detailsDAO.cs" />
     <Compile Include="IStudentDAO.cs" />
     <Compile Include="IusersDAO.cs" />

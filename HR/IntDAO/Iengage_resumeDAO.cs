@@ -19,6 +19,8 @@ namespace IntDAO
         List<engage_resumeModel> SeByy(int dqy, String Qid, String Pid, String Guan, String Start, String End, String Zt);
         List<engage_resumeModel> Fenye(int dqy);
 
+
+        List<engage_resumeModel> Fenye2(int dqy);
         int Row();
         int Pages();
     }
