@@ -7,7 +7,6 @@ using lntBLL;
 using Model;
 using IntDAO;
 using IOC;
-using System.Data;
 
 namespace BLL
 {
@@ -18,10 +17,6 @@ namespace BLL
         public List<usersModel> SelectBy(usersModel st)
         {
             return ist.SelectBy(st);
-        }
-        public usersModel Login(usersModel st)
-        {
-            return ist.Login(st);
         }
 
         public int Add(usersModel st)
@@ -42,18 +37,6 @@ namespace BLL
         public int Update(usersModel st)
         {
             return ist.Update(st);
-        }
-        public DataTable show()
-        {
-            return ist.show();
-        }
-        public object JXMain(int gid, string fid)
-        {
-            return ist.JXMain(gid,fid);
-        }
-        public Dictionary<string, object> Fenye(int pageIndex)
-        {
-            return ist.Fenye(pageIndex);
         }
     }
 }

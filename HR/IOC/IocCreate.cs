@@ -31,7 +31,7 @@ namespace IOC
         {
             UnityContainer ioc = new UnityContainer();
             ExeConfigurationFileMap ecf = new ExeConfigurationFileMap();
-            ecf.ExeConfigFilename = @"D:\VS\阶段四\HR\UI\Unity.config";
+            ecf.ExeConfigFilename = @"C:\Users\童帝豪\source\repos\HR3\HR\UI\Unity.config";
             Configuration cf = ConfigurationManager.OpenMappedExeConfiguration(ecf, ConfigurationUserLevel.None);
             UnityConfigurationSection cfs = cf.GetSection("unity") as UnityConfigurationSection;
             ioc.LoadConfiguration(cfs, "containerTwo");
@@ -149,10 +149,73 @@ namespace IOC
         {
             UnityContainer ioc = GetBLLSeciton();
             return ioc.Resolve<Iconfig_file_third_kindBLL>("config_file_third_kindBLL");
-        } 
+        }
         #endregion
 
+        public static Iengage_major_releaseDAO Createengage_major_releaseDAO()
+        {
+            UnityContainer ioc = new UnityContainer();
+            ioc.RegisterType<Iengage_major_releaseDAO, engage_major_releaseDAO>();
+            return ioc.Resolve<Iengage_major_releaseDAO>();
+        }
 
+        public static Iengage_major_releaseBLL Createengage_major_releaseBLL()
+        {
+            UnityContainer ioc = GetBLLSeciton();
+            return ioc.Resolve<Iengage_major_releaseBLL>("engage_major_releaseBLL");
+        }
+
+        public static Iengage_resumeDAO Createengage_resumeDAO()
+        {
+            UnityContainer ioc = new UnityContainer();
+            ioc.RegisterType<Iengage_resumeDAO, engage_resumeDAO>();
+            return ioc.Resolve<Iengage_resumeDAO>();
+        }
+
+        public static Iengage_resumeBLL Createengage_resumeBLL()
+        {
+            UnityContainer ioc = GetBLLSeciton();
+            return ioc.Resolve<Iengage_resumeBLL>("engage_resumeBLL");
+        }
+
+        public static Ihuman_fileDAO Createhuman_fileDAO()
+        {
+            UnityContainer ioc = new UnityContainer();
+            ioc.RegisterType<Ihuman_fileDAO, human_fileDAO>();
+            return ioc.Resolve<Ihuman_fileDAO>();
+        }
+
+        public static Ihuman_fileBLL Createhuman_fileBLL()
+        {
+            UnityContainer ioc = GetBLLSeciton();
+            return ioc.Resolve<Ihuman_fileBLL>("human_fileBLL");
+        }
+
+        public static Iengage_interviewDAO Createengage_interviewDAO()
+        {
+            UnityContainer ioc = new UnityContainer();
+            ioc.RegisterType<Iengage_interviewDAO, engage_interviewDAO>();
+            return ioc.Resolve<Iengage_interviewDAO>();
+        }
+
+        public static Iengage_interviewBLL Createengage_interviewBLL()
+        {
+            UnityContainer ioc = GetBLLSeciton();
+            return ioc.Resolve<Iengage_interviewBLL>("engage_interviewBLL");
+        }
+
+        public static Isalary_standardDAO Createsalary_standardDAO()
+        {
+            UnityContainer ioc = new UnityContainer();
+            ioc.RegisterType<Isalary_standardDAO, salary_standardDAO>();
+            return ioc.Resolve<Isalary_standardDAO>();
+        }
+
+        public static Isalary_standardBLL Createsalary_standardBLL()
+        {
+            UnityContainer ioc = GetBLLSeciton();
+            return ioc.Resolve<Isalary_standardBLL>("salary_standardBLL");
+        }
 
     }
 }

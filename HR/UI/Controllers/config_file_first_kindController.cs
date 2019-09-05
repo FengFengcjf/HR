@@ -24,7 +24,6 @@ namespace UI.Controllers
             List<config_file_first_kindModel> list = isb.Select();
             return Content(JsonConvert.SerializeObject(list));
         }
-
         //public ActionResult Fill()
         //{
 

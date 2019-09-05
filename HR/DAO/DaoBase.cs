@@ -101,7 +101,6 @@ namespace DAO
                    .Take(pageSize)
                    .ToList();
             return list;
-
         }
     }
 }

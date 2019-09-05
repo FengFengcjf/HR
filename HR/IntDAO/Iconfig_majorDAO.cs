@@ -14,5 +14,9 @@ namespace IntDAO
          int Update(config_majorModel st);
         List<config_majorModel> Select();
        List<config_majorModel> SelectBy(config_majorModel st);
+
+        List<config_majorModel> SeBy(String Id);
+
+        List<config_majorModel> SelectByName(config_majorModel st);
     }
 }

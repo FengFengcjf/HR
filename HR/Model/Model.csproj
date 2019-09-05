@@ -47,7 +47,12 @@
     <Compile Include="config_majorModel.cs" />
     <Compile Include="config_major_kindModel.cs" />
     <Compile Include="config_public_charModel.cs" />
+    <Compile Include="engage_interviewModel.cs" />
+    <Compile Include="engage_major_releaseModel.cs" />
+    <Compile Include="engage_resumeModel.cs" />
+    <Compile Include="human_fileModel.cs" />
     <Compile Include="public_charModel.cs" />
+    <Compile Include="salary_standardModel.cs" />
     <Compile Include="standard_detailsModel.cs" />
     <Compile Include="StudentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,7 +9,7 @@ namespace Model
     public class usersModel
     {  
 
-        public System.Int32 Id
+        public System.Int16 Id
         {
           get;set;
         }  
@@ -27,15 +27,6 @@ namespace Model
         public System.String u_password
         {
           get;set;
-        }
-        public System.Int32 Gid
-        {
-            get; set;
-        }
-        public System.String gname
-        {
-            get; set;
-        }
-        public string Available { get; set; }
+        } 
     }
 }

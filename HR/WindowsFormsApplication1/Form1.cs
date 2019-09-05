@@ -50,7 +50,7 @@ namespace DAO
           public List<%tableName%Model> SelectBy(%tableName%Model st)
         {
             List<%tableName%> list = SelectBy(e => e.Id.Equals(st.Id));
-            List<%tableName%> list2 = new List<%tableName%Model>();
+            List<%tableName%Model> list2 = new List<%tableName%Model>();
             foreach (var item in list)
             {
                %tableName%Model sd = new %tableName%Model()
@@ -152,7 +152,7 @@ namespace IOC
         public static I%tableName%BLL Create%tableName%BLL()
         {
             UnityContainer ioc = GetBLLSeciton();
-            return ioc.Resolve<I%tableName%BLL>(""%tableName%"");
+            return ioc.Resolve<I%tableName%BLL>(""%tableName%BLL"");
         }
         }");
                 idal2.Replace("%tableName%", tableName);
@@ -241,7 +241,7 @@ namespace EFentity
     {");
                 sb2.Replace("%tableName%", tableName);
 
-                SqlConnection cn = new SqlConnection(@"Data Source=DESKTOP-NILJ0RL;Initial Catalog=HR_DB;Integrated Security=True");
+                SqlConnection cn = new SqlConnection(@"Data Source=LAPTOP-O3FH30MH;Initial Catalog=HR_DB;Integrated Security=True");
                 string sql2 = string.Format(@"select * from [{0}] where 1=2", tableName);
                 SqlCommand cmd = new SqlCommand(sql2, cn);
                 cn.Open();
@@ -291,7 +291,7 @@ namespace Model
     {");
                 sb.Replace("%tableName%", tableName);
 
-                SqlConnection cn2 = new SqlConnection(@"Data Source=DESKTOP-NILJ0RL;Initial Catalog=HR_DB;Integrated Security=True");
+                SqlConnection cn2 = new SqlConnection(@"Data Source=LAPTOP-O3FH30MH;Initial Catalog=HR_DB;Integrated Security=True");
                 string sql3 = string.Format(@"select * from [{0}] where 1=2", tableName);
                 SqlCommand cmd2 = new SqlCommand(sql3, cn2);
                 cn2.Open();
@@ -353,6 +353,11 @@ namespace Model
                     sw.WriteLine(ibll);
                 }
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

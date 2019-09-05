@@ -38,5 +38,15 @@ namespace BLL
         {
             return ist.Update(st);
         }
+
+        public List<config_majorModel> SeBy(String Id)
+        {
+            return ist.SeBy(Id);
+        }
+
+        public List<config_majorModel> SelectByName(config_majorModel st)
+        {
+            return ist.SelectByName(st);
+        }
     }
 }

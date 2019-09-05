@@ -38,5 +38,10 @@ namespace BLL
         {
             return ist.Update(st);
         }
+
+        public List<config_major_kindModel> SelectByName(config_major_kindModel st)
+        {
+            return ist.SelectByName(st);
+        }
     }
 }
